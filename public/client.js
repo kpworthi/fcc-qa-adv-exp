@@ -12,7 +12,8 @@ $(function () {
     });
 
     socket.on('chat message', function(data) {
-      $('#messages').append($('<li>').html('<b>' + data.name + '</b>: ' + data.message))
+      $('#messages').append($('<li>').html('<b>' + data.name + '</b>: ' + data.message));
+      $('#messages').scrollTop($('#messages')[0].scrollHeight);
     });
 
     // Form submission with new message in field with id 'm'
